@@ -55,7 +55,29 @@ public class Proyecto{
 
     //metodos
 
-    
+     /*
+    * Añade un participante a la lista de participantes 
+    * @param participante
+    */
+    public void addParticipante(Participante pParticipante){
+
+        participantes.add(pParticipante);
+
+    }
+    /*
+    * Metodo que retorna actividad segun participante recibido por param 
+    * @param NombreParticipante
+    */
+    public String mostrarActividad(String pNombreParticipante){
+        
+        String respuesta = "";
+
+
+        
+
+        return respuesta;
+
+    }
 
     
 
