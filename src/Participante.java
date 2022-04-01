@@ -9,6 +9,7 @@ public class Participante {
 
     private String correo;
 
+    private HashMap<Actividad, >
 
      //Constructor 
 
