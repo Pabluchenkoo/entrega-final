@@ -10,17 +10,35 @@ public class Controller {
     /* Instancia del Modelo */
     private Proyecto modelo;
 
-    /* Instancia de la Vista */
-    private View view;
+   
+    
 
     /**
      * Crear la vista y el modelo del proyecto
      * 
      */
     public Controller() {
-        view = new View();
+        
         modelo = new Proyecto(null, null, null, null);
     }
+
+	public void printMenu()
+		{
+			
+			System.out.println("\nBienvenido al administrador de proyectos github...");
+			System.out.println("1.Cargar proyectos");
+			System.out.println("2. Crear Proyecto");
+			System.out.println("3. Crear Participantes");
+			System.out.println("4. Crear Actividad");
+			System.out.println("5. indicar inicio de actividad");
+			System.out.println("6. indicar fin de actividad");
+			System.out.println("7. Mostrar reporte actividades");
+			System.out.println("Dar el numero de opcion a resolver, luego oprimir tecla Return: (e.g., 1):");
+		}
+
+
+
+
 
     public void run() 
 	{
@@ -32,45 +50,31 @@ public class Controller {
 		
 		while(!fin)
         {
-			view.printMenu();
+			printMenu();
 			
 			int option = lector.nextInt();
 			switch(option)
             {
 				case 1:
-					view.printMessage("Inicializando...");
-					try 
-                    {
-                        String a = lector.nextString();
-					view.printMessage(modelo.guardarProyecto(a));
-				    } 
-                    catch (ParseException e1) 
-                    {
-					    // TODO Auto-generated catch block
-					    e1.printStackTrace();
-                    }
 					
+				
 				break;	
 
 				case 2:
 
-					view.printMessage("Seleccione un requerimiento");
-					int res = lector.nextInt();
-					
+				
 					break;					
 				case 3:
 					
 				case 4:
-					view.printMessage("");
+					
 					break;
 				case 5: 
-					view.printMessage("--------- \n Hasta pronto !! \n---------"); 
-					lector.close();
-					fin = true;
+					
 					break;				
 				
 				default: 
-					view.printMessage("--------- \n Opcion Invalida !! \n---------");
+					
 					break;
 			}
 		}
