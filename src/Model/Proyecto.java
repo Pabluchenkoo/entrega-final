@@ -61,8 +61,11 @@ public class Proyecto{
     * Añade una actividad a la lista de actividades 
     * @param participante
     */
-    public void addActividad( ){
+    public void addActividad(String pTitulo, String pDescripcion, String pTipo, String pFecha, int pHoraI, int pHoraF )
+    {
+        Actividad nueva = new Actividad(pTitulo, pDescripcion,pTipo,pFecha,pHoraI,pHoraF);
 
+        actividades.addLast(nueva);
         
 
     }
@@ -123,6 +126,8 @@ public class Proyecto{
             sb.append(participantes.toString());
         }
 
+        
+
         }
         catch(Exception e )
         {
@@ -134,6 +139,10 @@ public class Proyecto{
 
     }
 
+    public void cargarProyecto()
+    {
+
+    }
 
 
 
