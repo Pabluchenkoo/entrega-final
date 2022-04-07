@@ -1,3 +1,4 @@
+package Model;
 
 
 public class Participante {
@@ -9,12 +10,12 @@ public class Participante {
 
     private String correo;
 
-    private HashMap<Actividad, >
 
      //Constructor 
 
 
-     public Participante(String pNombre, String pCorreo){
+     public Participante (String pNombre, String pCorreo)
+     {
 
         nombre = pNombre;
 
