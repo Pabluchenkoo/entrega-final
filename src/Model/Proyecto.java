@@ -26,7 +26,7 @@ public class Proyecto{
 
     private LinkedList<Actividad> actividades;
 
-    private HashMap<Actividad, LinkedList<Participante>> hash;
+    private HashMap<Proyecto, LinkedList<Participante>> hash;
 
 
 
@@ -34,7 +34,7 @@ public class Proyecto{
 
     //constructor
 
-    public Proyecto(String pNombre, String pDescripcion, String pFechaInicio, String pCorreo ,Participante pParticipante ){
+    public Proyecto(String pNombre, String pDescripcion, String pFechaInicio, String pCorreo  ){
 
         nombre = pNombre;
 
@@ -46,7 +46,7 @@ public class Proyecto{
 
         actividades = new LinkedList<Actividad>();
 
-        hash = new HashMap<Actividad,LinkedList<Participante>>();
+        hash = new HashMap<Proyecto,LinkedList<Participante>>();
 
         
 
@@ -69,20 +69,7 @@ public class Proyecto{
         
 
     }
-    /*
-    * Metodo que retorna actividad segun participante recibido por param 
-    * @param NombreParticipante
-    */
-    public String mostrarActividad(String pNombreParticipante){
-        
-        String respuesta = "";
-
-
-        
-
-        return respuesta;
-
-    }
+    
 
     public void guardarProyecto(String pNombreArchivo)
     {
@@ -103,7 +90,7 @@ public class Proyecto{
         sb.append(',');
         sb.append(descripcion);
         sb.append(',');
-        sb.append(dueño);
+        sb.append(duenio);
         sb.append('\n');
         sb.append("actividades");
         sb.append('\n');
@@ -144,6 +131,10 @@ public class Proyecto{
 
     }
 
+    public HashMap<Proyecto, LinkedList<Participante>> darHash()
+    {
+        return hash;
+    }
 
 
 

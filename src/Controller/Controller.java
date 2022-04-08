@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 import Model.Model;
+import Model.Participante;
 import Model.Proyecto;
 
 import javax.swing.text.View;
@@ -85,12 +86,23 @@ public class Controller
 				String correo = lector.nextLine();
 				System.out.println("Introducir nombre del creador");
 				String duenio = lector.nextLine();
-				modelo.crearProyecto(nombre, descripcion, fechaI, correo, duenio); 
+				Proyecto nuevoProyecto = new Proyecto(nombre, descripcion, fechaI, correo);
+
 
 				System.out.println("Proyecto creado correctamente");
 				
 					break;					
 				case 3:
+
+				System.out.println("crear participante");
+				System.out.println("Introducir nombre del participante");
+				String nombreParticipante = lector.nextLine();
+				System.out.println("Introducir correo del participante");
+				String correoParticipante = lector.nextLine();
+
+				Participante nuevoParticipante = new Participante(nombreParticipante, correoParticipante);
+				modelo.asignarParticipante(nuevoProyecto, nuevoParticipante);
+
 					
 				case 4:
 					
