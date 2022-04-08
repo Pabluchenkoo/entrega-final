@@ -22,7 +22,7 @@ public class Proyecto{
 
     private String fechaInicio;
 
-    private Participante dueño;
+    private Participante duenio;
 
     private LinkedList<Actividad> actividades;
 
@@ -34,7 +34,7 @@ public class Proyecto{
 
     //constructor
 
-    public Proyecto(String pNombre, String pDescripcion, String pFechaInicio, String pCorreo  ){
+    public Proyecto(String pNombre, String pDescripcion, String pFechaInicio, String pCorreo ,Participante pParticipante ){
 
         nombre = pNombre;
 
@@ -42,7 +42,7 @@ public class Proyecto{
 
         fechaInicio = pFechaInicio;
 
-        dueño = new Participante(pNombre, pCorreo);
+        duenio = new Participante(pNombre, pCorreo);
 
         actividades = new LinkedList<Actividad>();
 

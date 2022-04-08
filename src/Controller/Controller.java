@@ -2,15 +2,23 @@ package Controller;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.LinkedList;
 import java.util.Scanner;
+
+import Model.Model;
 import Model.Proyecto;
+
 import javax.swing.text.View;
 
-public class Controller {
-    /* Instancia del Modelo */
-    private Proyecto modelo;
+public class Controller 
 
-   
+{
+
+
+    /* Instancia del Modelo */
+    private Model modelo;
+
+	
     
 
     /**
@@ -19,7 +27,7 @@ public class Controller {
      */
     public Controller() {
         
-        modelo = new Proyecto(null, null, null, null);
+        modelo = new Model();
     }
 
 	public void printMenu()
@@ -56,12 +64,30 @@ public class Controller {
 			switch(option)
             {
 				case 1:
+				LinkedList<Proyecto> proyectos = modelo.darProyectos();
+				for(int i=0; i<proyectos.size(); i++)
+				{
+					modelo.cargarProyecto();
+				}
 					
+
 				
 				break;	
 
 				case 2:
+				System.out.println("Introducir nombre del proyecto");
+				String nombre = lector.nextLine();
+				System.out.println("Introducir descripción del proyecto");
+				String descripcion = lector.nextLine();
+				System.out.println("Introducir fecha de inicio del proyecto DD/MM/AA");
+				String fechaI = lector.nextLine();
+				System.out.println("Introducir correo");
+				String correo = lector.nextLine();
+				System.out.println("Introducir nombre del creador");
+				String duenio = lector.nextLine();
+				modelo.crearProyecto(nombre, descripcion, fechaI, correo, duenio); 
 
+				System.out.println("Proyecto creado correctamente");
 				
 					break;					
 				case 3:
