@@ -27,23 +27,23 @@ public class Actividad
 
     private String fecha;
 
-    private int horaI;
+    private String horaI;
 
-    private int horaF;
+    private String horaF;
 
     private LinkedList<Participante> participantes;
 
 
     //constructor
 
-    public Actividad(String pTitulo, String pDescripcion, String pTipo, String pFecha, int pHoraI, int pHoraF)
+    public Actividad(String pTitulo, String pDescripcion, String pTipo, String pFecha, String horaIA, String horaFA)
     {
         setTitulo(pTitulo);
         setDescripcion(pDescripcion);
         setTipo(pTipo);
         setFecha(pFecha);
-        setHoraI(pHoraI);
-        setHoraF(pHoraF);
+        setHoraI(horaIA);
+        setHoraF(horaFA);
         participantes = new LinkedList<Participante>();
 
 
@@ -54,25 +54,25 @@ public class Actividad
     //Metodos
     
 
-    public int getHoraF() {
+    public String getHoraF() {
         return horaF;
     }
 
 
 
-    public void setHoraF(int horaF) {
+    public void setHoraF(String horaF) {
         this.horaF = horaF;
     }
 
 
 
-    public int getHoraI() {
+    public String getHoraI() {
         return horaI;
     }
 
 
 
-    public void setHoraI(int horaI) {
+    public void setHoraI(String horaI) {
         this.horaI = horaI;
     }
 

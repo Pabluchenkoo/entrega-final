@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 
 import java.util.LinkedList;
+import java.util.Scanner;
 
 
 
@@ -61,7 +62,7 @@ public class Proyecto{
     * Añade una actividad a la lista de actividades 
     * @param participante
     */
-    public void addActividad(String pTitulo, String pDescripcion, String pTipo, String pFecha, int pHoraI, int pHoraF )
+    public void addActividad(String pTitulo, String pDescripcion, String pTipo, String pFecha, String pHoraI, String pHoraF )
     {
         Actividad nueva = new Actividad(pTitulo, pDescripcion,pTipo,pFecha,pHoraI,pHoraF);
 
@@ -71,10 +72,10 @@ public class Proyecto{
     }
     
 
-    public void guardarProyecto(String pNombreArchivo)
+    public void guardarProyecto()
     {
 
-        try(PrintWriter writer = new PrintWriter(pNombreArchivo + ""))
+        try(PrintWriter writer = new PrintWriter("/Data/proyectos.csv"))
         {
 
         StringBuilder sb = new StringBuilder();
@@ -128,7 +129,18 @@ public class Proyecto{
 
     public void cargarProyecto()
     {
+        try {
+            Scanner input = new Scanner("/Data/proyectos.csv");
+            input.useDelimiter(",");
 
+            while (input.hasNextLine()) {
+                String line = input.nextLine();
+                System.out.println(line);
+            }
+            input.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public HashMap<Proyecto, LinkedList<Participante>> darHash()
@@ -136,8 +148,46 @@ public class Proyecto{
         return hash;
     }
 
+    public void agregarActividad(Actividad pActividad)
+    {
+        actividades.addLast(pActividad);
+
+    }
+
+    public void generarReporte()
+    {
+        System.out.println("REPORTE......");
+        System.out.println("nombre proyecto:");
+        System.out.println(nombre);
+        for (int i = 0; i < actividades.size(); i++)
+        {
+            Actividad actual = actividades.get(i);
+
+            String nombreActivi = actual.getTitulo();
+            System.out.println("nombre actividad:");
+            System.out.println(nombreActivi);
+
+            String descriActivi = actual.getDescripcion();
+            System.out.println("descripcion actividad:");
+            System.out.println(descriActivi);
+
+            System.out.println("Participantes actividad:");
+            LinkedList<Participante> participantes = actual.getParticipantes();
+            for (int j = 0; j < participantes.size(); j++)
+            {
+                Participante now = participantes.get(j);
+                System.out.println(now.darNombre());
+
+            }
+            
+            
+            System.out.println(descriActivi);
 
 
+            
+
+        }
+    }
 
 
 

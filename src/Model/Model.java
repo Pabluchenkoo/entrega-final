@@ -28,11 +28,11 @@ public class Model
     }
 
 
-    public void guardar(String pNombreArchivo){
+    public void guardar(){
         for (int i =0; i<proyectos.size(); i++)
         {
             Proyecto actual = proyectos.get(i);
-            actual.guardarProyecto(pNombreArchivo);
+            actual.guardarProyecto();
         }
     }
 
@@ -44,7 +44,7 @@ public class Model
     public Proyecto crearProyecto(String pNombre, String pDescripcion, String pFechaInicio, String pCorreo, String pNombreDuenio)
     {
         Participante duenio = new Participante(pNombreDuenio, pCorreo);
-        Proyecto nuevo = new Proyecto(pNombre, pDescripcion, pFechaInicio, pCorreo, duenio);
+        Proyecto nuevo = new Proyecto(pNombre, pDescripcion, pFechaInicio, pCorreo);
 
         proyectos.addLast(nuevo);
 
@@ -62,6 +62,25 @@ public class Model
                 participantes.addLast(pParticipante);
                 hash.put(pProyecto, participantes);
             }
+        }
+
+    }
+
+    public void agregarActividad(Actividad pActividad)
+    {
+        for (int i =0; i<proyectos.size(); i++)
+        {
+            Proyecto actual = proyectos.get(i);
+            actual.agregarActividad(pActividad);
+        }
+    }
+
+
+    public void generarReporte() {
+        for (int i =0; i<proyectos.size(); i++)
+        {
+            Proyecto actual = proyectos.get(i);
+            actual.generarReporte();
         }
 
     }

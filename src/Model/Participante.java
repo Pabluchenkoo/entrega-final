@@ -24,6 +24,15 @@ public class Participante {
 
      }
 
+     public String darNombre()
+     {
+        return nombre;
+     }
+
+     public String darCorreo()
+     {
+        return correo;
+     }
      
      //Metodos
 
