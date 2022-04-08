@@ -1,7 +1,7 @@
 Entrega 3
 
 Tomas Pardo Ramos 202113836
-\n
+\n...........
 Evelin Villamil 202113360
-\n
+\n...........
 Juan Pablo Junco - 201912957
